@@ -42,6 +42,8 @@ if (HAS_PYTHON)
   elseif (${LINUX_FLAVOR} MATCHES "^(rhel|centos|amzn|fedora|sles|almalinux)")
     SET(PKGDIR "site-packages")
   endif(${LINUX_FLAVOR} MATCHES "^(ubuntu|debian)")
+
+  SET(PKGDIR "site-packages")
   find_package(pybind11 2.6.0 REQUIRED PATHS "$ENV{VIRTUAL_ENV}/lib/python${PYTHONLIBS_VERSION_MAJOR}.${PYTHONLIBS_VERSION_MINOR}/${PKGDIR}/pybind11" "/usr/local/lib/python${PYTHONLIBS_VERSION_MAJOR}.${PYTHONLIBS_VERSION_MINOR}/${PKGDIR}/pybind11" "/usr/lib/python${PYTHONLIBS_VERSION_MAJOR}.${PYTHONLIBS_VERSION_MINOR}/${PKGDIR}/pybind11")
 
 endif(HAS_PYTHON)
